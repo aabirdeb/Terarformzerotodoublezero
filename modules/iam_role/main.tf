@@ -1,6 +1,6 @@
 
 resource "aws_iam_role" "lambda_role" {
-  name = "govos-genai-poc-user-lambdat"
+  name = "bapi-deb-user-lambdat"
   
   
   assume_role_policy = <<EOF
