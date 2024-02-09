@@ -22,5 +22,9 @@ data "archive_file" "lambda_zip" {
   output_path = "${path.module}/lambdas3/s3processor1.zip"
   type        = "zip"
 }
-
+resource "aws_lambda_function" "test_lambda" {
+  filename      = "lambdas3/s3processor1.zip"
+  function_name = "triggers3lambdaterra"
+  role          = module.lambda_rolee.lambda_role_arn
+  handler       = "s3processor1.lambda_handler"
 
