@@ -16,3 +16,11 @@ module "example_s3_bucket2" {
   bucket_name = "bapi-deb-output-textractt"
 }
 
+
+data "archive_file" "lambda_zip" {
+  source_dir  = "${path.module}/lambdas3/"
+  output_path = "${path.module}/lambdas3/s3processor1.zip"
+  type        = "zip"
+}
+
+
